@@ -1,7 +1,5 @@
 {
   "name": "Overlay Coffee",
-  "description": "Specialty coffee, matcha & signature cream drinks on Little Lonsdale St, Melbourne.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "Independent concept — not the official Overlay Coffee website. Specialty coffee, matcha & signature cream drinks on Little Lonsdale St, Melbourne."
 }
 

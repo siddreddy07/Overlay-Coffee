@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 
-const easeCurve = [0.22, 1, 0.36, 1];
+const easeCurve = [0.22, 1, 0.36, 1] as const;
 
 export const VisitSection: React.FC = () => {
   return (
     <section
       id="visit"
-      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36"
+      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16"
     >
       {/* Section Header */}
       <motion.div
@@ -16,7 +16,7 @@ export const VisitSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease: easeCurve }}
-        className="border-t border-[#1A1918]/15 pt-8 sm:pt-10 mb-12 sm:mb-16"
+        className="border-t border-[#1A1918]/15 pt-4 sm:pt-6 mb-6 sm:mb-8"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-baseline">
           <div className="lg:col-span-3">

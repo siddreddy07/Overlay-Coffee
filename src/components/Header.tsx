@@ -4,10 +4,11 @@ import { ArrowUpRight, Clock, MapPin } from 'lucide-react';
 
 interface HeaderProps {
   onOpenVisit: () => void;
-  onOpenMenuPreview?: () => void;
+  onScrollToMenu: () => void;
+  onScrollToAtmosphere: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenVisit, onOpenMenuPreview }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenVisit, onScrollToMenu, onScrollToAtmosphere }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -59,19 +60,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenVisit, onOpenMenuPreview }
           {/* Left Navigation */}
           <nav className="flex items-center gap-8 text-[13px] tracking-[0.14em] uppercase font-sans font-medium text-[#1A1918]/80">
             <button
-              onClick={onOpenMenuPreview}
+              onClick={onScrollToMenu}
               className="hover:text-[#1A1918] transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1A1918] py-2 relative group"
             >
               <span>Menu</span>
               <span className="absolute bottom-1 left-0 w-0 h-[1.5px] bg-[#1A1918] transition-all duration-200 group-hover:w-full" />
             </button>
-            <a
-              href="#about"
+            <button
+              onClick={onScrollToAtmosphere}
               className="hover:text-[#1A1918] transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1A1918] py-2 relative group"
             >
               <span>About</span>
               <span className="absolute bottom-1 left-0 w-0 h-[1.5px] bg-[#1A1918] transition-all duration-200 group-hover:w-full" />
-            </a>
+            </button>
           </nav>
 
           {/* Center Brand Identity */}
@@ -156,23 +157,25 @@ export const Header: React.FC<HeaderProps> = ({ onOpenVisit, onOpenMenuPreview }
             className="md:hidden overflow-hidden border-b border-[#1A1918]/12 bg-[#F5F2EC]"
           >
             <div className="px-6 py-8 space-y-6">
-              <nav className="flex flex-col space-y-2 text-sm uppercase tracking-[0.18em] font-medium text-[#1A1918]/90">
+<nav className="flex flex-col space-y-2 text-sm uppercase tracking-[0.18em] font-medium text-[#1A1918]/90">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onOpenMenuPreview?.();
+                    onScrollToMenu();
                   }}
                   className="min-h-[44px] flex items-center text-left hover:text-[#1A1918] py-1 border-b border-[#1A1918]/8"
                 >
-                  Coffee &amp; Signature Drinks
+                  Coffee & Signature Drinks
                 </button>
-                <a
-                  href="#about"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onScrollToAtmosphere();
+                  }}
                   className="min-h-[44px] flex items-center text-left hover:text-[#1A1918] py-1 border-b border-[#1A1918]/8"
                 >
                   About the Space
-                </a>
+                </button>
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);

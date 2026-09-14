@@ -41,7 +41,7 @@ const galleryItems: GalleryItem[] = [
   },
 ];
 
-const easeCurve = [0.22, 1, 0.36, 1];
+const easeCurve = [0.22, 1, 0.36, 1] as const;
 
 export const GallerySection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -60,7 +60,7 @@ export const GallerySection: React.FC = () => {
   return (
     <section
       id="atmosphere"
-      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36"
+      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16"
     >
       {/* Section Header */}
       <motion.div
@@ -68,7 +68,7 @@ export const GallerySection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease: easeCurve }}
-        className="border-t border-[#1A1918]/15 pt-8 sm:pt-10 mb-8 sm:mb-20"
+        className="border-t border-[#1A1918]/15 pt-4 sm:pt-6 mb-4 sm:mb-8"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-baseline">
           <div className="lg:col-span-3">
@@ -88,7 +88,7 @@ export const GallerySection: React.FC = () => {
       </motion.div>
 
       {/* Desktop Composition: Art-directed, intentional negative space & varied rhythm */}
-      <div className="hidden md:block space-y-16 lg:space-y-24">
+      <div className="hidden md:block space-y-8 lg:space-y-12">
         {/* Row 1: Large dominant wide interior (65%) + Offset small portrait (35%) */}
         <div className="grid grid-cols-12 gap-8 lg:gap-12 items-end">
           <motion.div

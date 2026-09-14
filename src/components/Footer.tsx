@@ -3,10 +3,10 @@ import { ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#F8F6F2] text-[#1A1918] pt-20 sm:pt-28 lg:pt-36 pb-12 sm:pb-16 border-t border-[#1A1918]/15 overflow-hidden">
+    <footer className="w-full bg-[#F8F6F2] text-[#1A1918] pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 border-t border-[#1A1918]/15 overflow-hidden">
       <div className="max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14">
         {/* Top Info Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-baseline pb-16 sm:pb-24 border-b border-[#1A1918]/10 text-[12px] sm:text-[13px] tracking-[0.16em] uppercase font-sans font-medium text-[#1A1918]/70">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-baseline pb-8 sm:pb-12 border-b border-[#1A1918]/10 text-[12px] sm:text-[13px] tracking-[0.16em] uppercase font-sans font-medium text-[#1A1918]/70">
           <div>
             <p className="text-[#1A1918]">320 Little Lonsdale St</p>
             <p className="mt-0.5 text-[#1A1918]/55">Melbourne VIC 3000</p>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Large Poster-Scale Wordmark Sign-Off */}
-        <div className="py-12 sm:py-16 lg:py-24 text-center overflow-hidden">
+        <div className="py-6 sm:py-8 lg:py-12 text-center overflow-hidden">
           <h2
             className="font-serif text-[clamp(3.8rem,18vw,16.5rem)] leading-[0.85] tracking-[-0.03em] text-[#1A1918] select-none pointer-events-none"
             aria-label="Overlay."
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Legal, Disclaimer & Origin Row */}
-        <div className="pt-6 border-t border-[#1A1918]/10 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-sans text-[#1A1918]/50 gap-4">
+        <div className="pt-4 border-t border-[#1A1918]/10 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-sans text-[#1A1918]/50 gap-4">
           <div className="flex items-center gap-2">
             <span>Melbourne</span>
             <span className="text-[#1A1918]/25">/</span>
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="text-center sm:text-right">
-            <span>Template Demo</span>
+            <span>Independent Website</span>
           </div>
         </div>
       </div>

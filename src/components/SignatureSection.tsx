@@ -63,7 +63,7 @@ const signatureDrinks: SignatureDrink[] = [
   },
 ];
 
-const easeCurve = [0.22, 1, 0.36, 1];
+const easeCurve = [0.22, 1, 0.36, 1] as const;
 
 export const SignatureSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,7 +82,7 @@ export const SignatureSection: React.FC = () => {
   return (
     <section
       id="signature-section"
-      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36 bg-[#F7F6F2]"
+      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-[#F7F6F2]"
     >
       {/* Section Intro */}
       <motion.div
@@ -90,7 +90,7 @@ export const SignatureSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease: easeCurve }}
-        className="border-t border-[#DDD9D2] pt-8 sm:pt-10 mb-8 sm:mb-10 lg:mb-24"
+        className="border-t border-[#DDD9D2] pt-4 sm:pt-6 mb-4 sm:mb-6 lg:mb-12"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-baseline">
           <div className="lg:col-span-3">
@@ -175,7 +175,7 @@ export const SignatureSection: React.FC = () => {
       {/* DESKTOP (lg+): Art-Directed Editorial Spread */}
       <div className="hidden lg:block">
         {/* FEATURED DRINK 01: Peanut Cream Latte (Dominant Asymmetric Composition) */}
-        <div className="mb-28 xl:mb-36">
+        <div className="mb-12 xl:mb-16">
           <div className="grid grid-cols-12 gap-8 lg:gap-14 items-center">
             {/* Dominant Image: 60% Width */}
             <motion.div

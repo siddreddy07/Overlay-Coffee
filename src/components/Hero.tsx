@@ -5,16 +5,15 @@ import { BrandSeal } from './BrandSeal';
 
 interface HeroProps {
   onOpenVisit: () => void;
-  onScrollToNext: () => void;
 }
 
-const easeCurve = [0.22, 1, 0.36, 1];
+const easeCurve = [0.22, 1, 0.36, 1] as const;
 
-export const Hero: React.FC<HeroProps> = ({ onOpenVisit, onScrollToNext }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenVisit }) => {
   return (
     <section
       id="hero-section"
-      className="w-full pt-2 sm:pt-4 pb-4 sm:pb-6 px-3 sm:px-6 lg:px-8 max-w-[1720px] mx-auto"
+      className="w-full pt-1 sm:pt-2 pb-2 sm:pb-3 px-3 sm:px-6 lg:px-8 max-w-[1720px] mx-auto"
     >
       {/* Immersive Framed Container */}
       <motion.div

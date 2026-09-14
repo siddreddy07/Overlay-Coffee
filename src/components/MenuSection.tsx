@@ -46,7 +46,7 @@ const categoryLabels: { key: MenuCategory; label: string }[] = [
   { key: 'pastry', label: 'Daily Pastry' },
 ];
 
-const easeCurve = [0.22, 1, 0.36, 1];
+const easeCurve = [0.22, 1, 0.36, 1] as const;
 
 export const MenuSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('all');
@@ -59,7 +59,7 @@ export const MenuSection: React.FC = () => {
   return (
     <section
       id="menu"
-      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-20 sm:pt-28 lg:pt-36 pb-20 sm:pb-28 lg:pb-36"
+      className="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 pt-6 lg:pt-10 pb-8 sm:pb-6"
     >
       {/* Menu Intro */}
       <motion.div
@@ -67,7 +67,7 @@ export const MenuSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease: easeCurve }}
-        className="border-t border-[#1A1918]/15 pt-8 sm:pt-10 mb-12 sm:mb-16"
+        className="border-t border-[#1A1918]/15 pt-4 sm:pt-6 mb-6 sm:mb-8"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-baseline">
           <div className="lg:col-span-3">
@@ -87,7 +87,7 @@ export const MenuSection: React.FC = () => {
       </motion.div>
 
       {/* Category Navigation */}
-      <div className="flex items-center gap-6 sm:gap-10 border-b border-[#1A1918]/12 pb-4 mb-12 overflow-x-auto no-scrollbar scroll-smooth">
+      <div className="flex items-center gap-6 sm:gap-10 border-b border-[#1A1918]/12 pb-4 mb-8 overflow-x-auto no-scrollbar scroll-smooth">
         {categoryLabels.map(({ key, label }) => {
           const isActive = activeCategory === key;
           return (
@@ -113,10 +113,8 @@ export const MenuSection: React.FC = () => {
         })}
       </div>
 
-      {/* Menu Grid Content + Atmospheric Still-Life Detail */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Menu Items List */}
-        <div className="lg:col-span-8">
+      {/* Menu Grid Content */}
+      <div className="lg:col-span-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
@@ -153,37 +151,6 @@ export const MenuSection: React.FC = () => {
             <span>Dairy alternatives (Oat, Soy, Almond) +0.5</span>
             <span>All items prepared to dine in or takeaway</span>
           </div>
-        </div>
-
-        {/* Still-Life Counter Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.65, ease: easeCurve }}
-          className="lg:col-span-4 flex flex-col space-y-4"
-        >
-          <div className="relative aspect-[3/4] overflow-hidden bg-[#EAE6DE]">
-            <img
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=88"
-              alt="Artisan coffee extraction and pour-over preparation at Overlay Coffee counter"
-              referrerPolicy="no-referrer"
-              loading="lazy"
-              className="w-full h-full object-cover select-none transition-transform duration-700 ease-out hover:scale-[1.018]"
-            />
-            <div className="absolute bottom-4 left-4 right-4 text-white/90">
-              <span className="text-[10px] tracking-[0.2em] uppercase font-sans font-medium block">
-                Counter Service
-              </span>
-              <span className="font-serif text-sm tracking-tight text-white block">
-                Little Lonsdale Morning Pour
-              </span>
-            </div>
-          </div>
-          <p className="text-[12px] font-sans text-[#1A1918]/55 leading-relaxed">
-            Beans roasted locally in Melbourne. Daily single origin filter rotates every Wednesday.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

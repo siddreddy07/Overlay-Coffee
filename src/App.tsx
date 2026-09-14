@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { SignatureSection } from './components/SignatureSection';
@@ -28,12 +28,20 @@ export default function App() {
     }
   };
 
+  const handleScrollToAtmosphere = () => {
+    const el = document.getElementById('atmosphere');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F6F2] text-[#1A1918] flex flex-col selection:bg-[#1A1918] selection:text-[#F8F6F2]">
       {/* Hospitality Header */}
       <Header
         onOpenVisit={() => setIsVisitOpen(true)}
-        onOpenMenuPreview={handleScrollToMenu}
+        onScrollToMenu={handleScrollToMenu}
+        onScrollToAtmosphere={handleScrollToAtmosphere}
       />
 
       {/* Main Experience */}
